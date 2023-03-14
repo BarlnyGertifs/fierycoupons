@@ -1,0 +1,102 @@
+
+#vanillatoasts-container {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 240px;
+    z-index: 9999999999;
+    font-family: 'United Sans', sans-serif;
+}
+.vanillatoasts-toast {
+    position: relative;
+    padding: 10px 17px;
+    margin: 20px;
+    border-radius: 10px;
+    background: #fff;
+    cursor: pointer;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+    animation-duration:  .5s;
+    animation-name: VanillaToasts;
+    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    color: #fff;
+}
+@media screen and (max-width: 550px) {
+    .vanillatoasts-toast {
+        margin: 10px;
+    }
+    #vanillatoasts-container {
+        width: 220px;
+    }
+}
+.vanillatoasts-fadeOut {
+    animation-name: VanillaToastsFadeOut;
+    animation-duration: 3s;
+    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    animation-fill-mode: forwards;
+}
+#vanillatoasts-container p,
+#vanillatoasts-container h4 {
+    margin: 3px 0!important;
+}
+.vanillatoasts-title {
+    font-weight: 300;
+    font-size: 18px;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+    color: #fff;
+}
+.vanillatoasts-text {
+    font-size: 14px;
+    color: #777;
+}
+.vanillatoasts-icon {
+    position: absolute;
+    top: 0px;
+    left: -60px;
+    width: 70px;
+    height: 70px;
+    border-radius: 50px;
+    border: 8px solid #3e3e3e;
+    box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.1);
+    opacity: 0.8;
+}
+.vanillatoasts-toast a, .vanillatoasts-toast a:hover {
+    color: #549EDB !important;
+    text-decoration: none !important;
+}
+.vanillatoasts-success {
+    border-bottom: 2px solid rgb(65, 65, 65);
+    background: #222222;
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3e3e3e', endColorstr='#222222',GradientType=0 );
+    opacity: 0.8;
+    color: #fff;
+}
+.vanillatoasts-warning {
+    border-bottom: 2px solid #DB9215;
+}
+.vanillatoasts-error {
+    border-bottom: 2px solid #DB2B1D;
+}
+.vanillatoasts-info {
+    border-bottom: 2px solid #27ABDB;
+}
+@keyframes VanillaToasts {
+    from {
+        transform: translate3d(400px, 0, 0);;
+        opacity: 0;
+    }
+    to {
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+    }
+}
+@keyframes VanillaToastsFadeOut {
+    from {
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+    }
+    to {
+        transform: translate3d(400px, 0, 0);
+        opacity: 0;
+    }
+}
